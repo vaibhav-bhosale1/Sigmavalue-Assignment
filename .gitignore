@@ -1,0 +1,111 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+htmlcov/
+.pytest_cache/
+
+# Django stuff:
+# Ignore database files
+db.sqlite3
+db.sqlite3-journal
+
+# Django media and static (if you keep uploads outside repo)
+media/
+staticfiles/
+
+# Local settings
+local_settings.py
+
+# If you use Django secret key files or env files
+.env
+.env.*
+
+# pyenv
+.python-version
+
+# celery
+celerybeat-schedule
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs (PyCharm, etc.)
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+
+# mypy
+.mypy_cache/
+
+# virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Logs
+*.log
+
+# Editor backups
+*~
+# Backup files
+*.swp
+
+# Project-specific caches
+realestate_chatbot/analysis/__pycache__/
+realestate_chatbot/realestate_chatbot/__pycache__/
+
+# If you keep a project-level virtualenv in the repo
+realestate_chatbot/venv/
+
