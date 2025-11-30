@@ -6,11 +6,11 @@
 
 *An AI-powered full-stack application for analyzing real estate trends through Natural Language Querying*
 
-[![Live Demo](https://img.shields.io/badge/demo-online-success?style=for-the-badge)](https://your-vercel-app.vercel.app)
-[![Backend API](https://img.shields.io/badge/API-live-blue?style=for-the-badge)](https://your-render-api.onrender.com)
-[![License](https://img.shields.io/badge/license-MIT-purple?style=for-the-badge)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/demo-online-success?style=for-the-badge)](https://sigmavalue-assignment-eight.vercel.app/)
+[![Backend API](https://img.shields.io/badge/API-live-blue?style=for-the-badge)](https://sigmavalue-assignment-i2qy.onrender.com//api/chat/)
 
-[View Demo](#-walkthrough-video--demo) · [Report Bug](https://github.com/yourusername/realestate-assignment/issues) · [Request Feature](https://github.com/yourusername/realestate-assignment/issues)
+
+[View Demo](https://www.loom.com/share/e64ac185960149a78b1b972829cec538) · [Report Bug](https://github.com/yourusername/realestate-assignment/issues) · [Request Feature](https://github.com/yourusername/realestate-assignment/issues)
 
 </div>
 
@@ -114,7 +114,7 @@ graph LR
 
 | Resource | Link |
 |----------|------|
-| 📺 **Video Demo** | [Watch on Loom/YouTube](https://your-video-link.com) |
+| 📺 **Video Demo** | [Watch on Loom/YouTube](https://www.loom.com/share/e64ac185960149a78b1b972829cec538) |
 | 🚀 **Live Frontend** | [Visit App](https://sigmavalue-assignment-eight.vercel.app/) |
 | ⚙️ **Backend API** | [API Docs](https://sigmavalue-assignment-i2qy.onrender.com/api/chat/) |
 | 📂 **GitHub Repo** | [View Code](https://github.com/vaibhav-bhosale1/Sigmavalue-Assignment) |
