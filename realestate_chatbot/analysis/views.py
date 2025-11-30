@@ -4,6 +4,8 @@ from rest_framework import status
 from django.db.models import Avg, Sum
 from .models import RealEstateData
 from .serializers import RealEstateDataSerializer
+import csv
+from django.http import HttpResponse
 
 class ChatAnalysisView(APIView):
     def post(self, request):
@@ -60,3 +62,37 @@ class ChatAnalysisView(APIView):
             "chart_data": chart_data,
             "table_data": serializer.data
         }, status=status.HTTP_200_OK)
+        
+
+class DownloadAnalysisView(APIView):
+    def get(self, request):
+        # Get the location from the URL query parameters (e.g., ?location=Wakad)
+        location = request.query_params.get('location')
+        
+        if not location:
+            return Response({"error": "Location parameter is required"}, status=400)
+
+        # Create the CSV response
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = f'attachment; filename="{location}_Analysis.csv"'
+
+        writer = csv.writer(response)
+        # Write CSV Header
+        writer.writerow(['Year', 'Location', 'City', 'Total Sales', 'Avg Price (Flat)', 'Supply (Units)', 'Prevailing Rate Range'])
+
+        # Fetch Data
+        data = RealEstateData.objects.filter(final_location__iexact=location).order_by('year')
+        
+        # Write Data Rows
+        for entry in data:
+            writer.writerow([
+                entry.year, 
+                entry.final_location, 
+                entry.city, 
+                entry.total_sales_igr, 
+                entry.flat_weighted_avg_rate, 
+                entry.total_units,
+                entry.flat_prevailing_rate_range
+            ])
+
+        return response

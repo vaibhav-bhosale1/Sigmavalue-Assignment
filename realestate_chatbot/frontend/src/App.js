@@ -43,6 +43,30 @@ function App() {
     setLoading(false);
   };
 
+  // Add this function inside App()
+  const handleDownload = async () => {
+    if (!currentTableData || currentTableData.length === 0) return;
+    
+    // Get the location name from the first row of data
+    const location = currentTableData[0].final_location;
+    
+    try {
+      // Trigger the download directly
+      const url = `https://realestate-backend.onrender.com/api/download/?location=${location}`; // Update domain for production later
+      
+      // Create a temporary link to force download
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `${location}_Analysis.csv`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      
+    } catch (error) {
+      console.error("Download failed", error);
+    }
+  };
+
   return (
     <div className="container-fluid py-4" style={{ maxWidth: '1200px' }}>
       
@@ -128,10 +152,20 @@ function App() {
               </div>
               
               {/* Table Section */}
-              <div className="modern-card p-4">
-                 <h6 className="text-uppercase text-secondary mb-3" style={{letterSpacing: '1px', fontSize: '0.75rem'}}>Detailed Records</h6>
-                <DataTable tableData={currentTableData} />
-              </div>
+              {/* Table Section */}
+                <div className="modern-card p-4">
+                  <div className="d-flex justify-content-between align-items-center mb-3">
+                    <h6 className="text-uppercase text-secondary mb-0" style={{letterSpacing: '1px', fontSize: '0.75rem'}}>Detailed Records</h6>
+                    <button 
+                      className="btn btn-sm btn-outline-dark" 
+                      onClick={handleDownload}
+                      style={{ fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '5px' }}
+                    >
+                      <i className="bi bi-download"></i> Download CSV
+                    </button>
+                  </div>
+                  <DataTable tableData={currentTableData} />
+                </div>
             </div>
           )}
         </div>
