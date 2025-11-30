@@ -30,7 +30,7 @@ function App() {
     setQuery(''); // Clear input immediately
 
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/chat/', { query: userMessage.text });
+      const res = await axios.post('https://sigmavalue-assignment-i2qy.onrender.com/api/chat/', { query: userMessage.text });
       
       const botMessage = { sender: 'bot', text: res.data.response };
       setChatHistory((prev) => [...prev, botMessage]);
